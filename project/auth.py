@@ -1,10 +1,3 @@
-# Exercise 9.2.4 – SQL Injection Fix:
-# I fixed the SQL injection by replacing raw SQL with a secure SQLAlchemy ORM query:user = User.query.filter_by(email=email).first()
-# This protects against SQL injection by automatically escaping input.
-# - Testing with SQL injection payloads like `' OR '1'='1` and confirming no login bypass
-# - Running the app and confirming normal user signup/login still works
-
-
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_user, login_required, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
